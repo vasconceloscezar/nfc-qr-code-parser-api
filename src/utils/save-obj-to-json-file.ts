@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function saveObjToJsonFile(object, fileName = "object.json") {
+function saveObjToJsonFile(object: Object, fileName = "object.json"): void {
   const filePath = "./data/generated/";
 
   if (!fs.existsSync(filePath)) {
