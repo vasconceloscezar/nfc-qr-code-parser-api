@@ -1,10 +1,12 @@
 const fs = require("fs");
 
-function saveObjToJsonFile(object, config = { filePath: "./data/generated", fileName: "object.json" }) {
+function saveObjToJsonFile(object, fileName = "object.json") {
+  const filePath = "./data/generated/";
+
   if (!fs.existsSync(filePath)) {
     fs.mkdirSync(filePath, { recursive: true });
   }
-  let path = `${config.filePath}/${config.fileName}`;
+  let path = `${filePath}/${fileName}`;
 
   fs.writeFileSync(path, JSON.stringify(object));
 }
