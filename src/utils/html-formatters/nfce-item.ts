@@ -1,7 +1,8 @@
-export function formatNFCeItems(document: any) {
-  let index = 1;
-  let nfceItems = [{}];
+import { NFCeItem } from "../../models/NFCe";
 
+export function formatNFCeItems(document: any): NFCeItem[] {
+  let index = 1;
+  let nfceItems = [];
   while (index > 0) {
     const item = document.getElementById(`Item + ${index}`);
     if (!item) {
@@ -15,7 +16,7 @@ export function formatNFCeItems(document: any) {
   return nfceItems;
 }
 
-function parseNFCeItem(nodes: any[]) {
+function parseNFCeItem(nodes: any[]): NFCeItem {
   const parsedItem = {
     code:'',
 		description:'',
