@@ -1,8 +1,7 @@
 import axios from "axios";
 import HTMLParser from 'node-html-parser'
+import { saveObjToJsonFile } from "./utils";
 import { formatNFCeBusinessInfo, formatNFCeHeaders, formatNFCeItems } from "./utils/html-formatters";
-import { saveObjToJsonFile } from "./utils/save-obj-to-json-file";
-
 
 
 function parseNFCeHTML(html: string) {
