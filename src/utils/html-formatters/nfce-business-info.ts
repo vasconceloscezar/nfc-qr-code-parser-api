@@ -1,4 +1,10 @@
-export function formatNFCeBusinessInfo(document: any) {
+type BusinessInfo = {
+  idBusiness: string,
+  ieBusiness: string,
+  address: string
+}
+
+export function formatNFCeBusinessInfo(document: any): BusinessInfo {
   const queriedBusinessInfo = document.querySelectorAll(".NFCCabecalho_SubTitulo1");
   const businessInfo = {
     idBusiness: '',

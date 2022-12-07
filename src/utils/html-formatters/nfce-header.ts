@@ -1,17 +1,21 @@
 import moment from "moment";
-
-export function formatNFCeHeaders(document: any) {
+type NFCeHeader = {
+  businessName: string
+  nfceNumber: string
+  serie: string
+  key: string
+  idClient: string
+  date: string
+}
+export function formatNFCeHeaders(document: any):NFCeHeader {
   const headers = document.querySelectorAll(".NFCCabecalho_SubTitulo");
   const formatedHeaders = {
     businessName: '',
-    idBusiness:  '',
-    ieBusiness:  '',
-    number:      '',
+    nfceNumber:     '',
     serie:       '',
     date:        '',
     key:         '',
     idClient:    '',
-    address:     '',
   };
   headers.forEach((el: any, index: number) => {
     let value = el.childNodes[0].text;
@@ -24,7 +28,7 @@ export function formatNFCeHeaders(document: any) {
         break;
       case 2:
         const splittedStuff = value.split(":");
-        let number = splittedStuff[1].slice(0, splittedStuff[1].indexOf("\n")).trim();
+        let nfceNumber = splittedStuff[1].slice(0, splittedStuff[1].indexOf("\n")).trim();
         let serie = splittedStuff[2].slice(0, splittedStuff[2].indexOf("\n")).trim();
         let date = splittedStuff[3].split(" ")[1];
         let hour = splittedStuff[3].split(" ")[2];
@@ -32,7 +36,7 @@ export function formatNFCeHeaders(document: any) {
         let sec = splittedStuff[5];
         let time = `${hour}:${min}:${sec}`;
         let dateTime = moment(`${date} ${time}`, "DD/MM/YYYY HH:mm:ss");
-        formatedHeaders.number = number;
+        formatedHeaders.nfceNumber = nfceNumber;
         formatedHeaders.serie = serie;
         formatedHeaders.date = dateTime.format("DD/MM/YYYY HH:mm:ss");
         break;

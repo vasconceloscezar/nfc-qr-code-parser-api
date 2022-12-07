@@ -15,7 +15,6 @@ function parseNFCeHTML(html: string) {
     items: items,
   };
   console.log(nfceData);
-
   saveObjToJsonFile(nfceData, "nfce.json");
 }
 
