@@ -1,7 +1,7 @@
 import { NFCe } from "../models/NFCe";
-import { formatNFCeBusinessInfo, formatNFCeFooter, formatNFCeHeaders, formatNFCeItems } from "../utils/html-formatters";
+import { formatNFCeBusinessInfo, formatNFCeFooter, formatNFCeHeaders, formatNFCeItems } from "../../utils/html-formatters";
 
-export function parseNFCeHTML(document: any): NFCe{
+export function parseNfcHTML(document: any): NFCe{
   const header = formatNFCeHeaders(document);
   const businessInfo = formatNFCeBusinessInfo(document);
   const items = formatNFCeItems(document);
