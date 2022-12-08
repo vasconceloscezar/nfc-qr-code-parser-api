@@ -6,7 +6,7 @@ This api was made with the intention to parse a URL that is gotten when the user
 
 ## TODO
 
-- [ ] Create docker file
+- [x] Create docker file
 - [ ] Find server to host container
 - [ ] Add Git Actions for CI/CD
 - [ ] Add Jest and tests
@@ -18,12 +18,13 @@ You will need at least the version 12.x.x of Node.JS installed.
 Clone the repo, and run the following commands:
 
 ```shell
- ~ yarn install
- ~ yarn start
+ $ yarn install
+ $ yarn start
+
  or
 
- ~ npm install
- ~ npm start
+ $ npm install
+ $ npm start
 ```
 
 The server listens by default on port `:8080`.
@@ -75,4 +76,20 @@ The result should be something like the following:
     "totalPaid": 10.0
   }
 }
+```
+
+### Docker
+
+It is possible to run this repo using docker.
+
+First build the docker image:
+
+```shell
+  $ docker build . -t <username>/nfc-qr-code-parser-api
+```
+
+After it, you can run with:
+
+```shell
+  $ docker run -p 5000:8080 -d <username>/nfc-qr-code-parser-api
 ```
