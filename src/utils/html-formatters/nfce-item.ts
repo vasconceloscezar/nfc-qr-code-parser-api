@@ -12,7 +12,6 @@ export function formatNFCeItems(document: any): NFCeItem[] {
     nfceItems.push(parseNFCeItem(item.childNodes));
     index++;
   }
-  console.log(nfceItems);
   return nfceItems;
 }
 
