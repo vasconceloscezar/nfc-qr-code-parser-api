@@ -1,4 +1,4 @@
-# QRCode URL Parser
+# QRCode NFC URL Parser
 
 This api was made with the intention to parse a URL that is gotten when the user scans a QRCode on NFC recipts in Brazil.
 
