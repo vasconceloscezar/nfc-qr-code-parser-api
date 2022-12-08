@@ -18,10 +18,7 @@ export class NfcParserController implements Controller {
       const nfcDocument = await this.htmlDownloader.download(urlConverted)
       const nfc = this.nfcParser.parse(nfcDocument)
 
-      const result = {
-        message: 'deu bom',
-        nfc
-      }
+      const result = nfc
       return ok(result)
     } catch (err: any) {
       return serverError(err)
