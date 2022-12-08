@@ -4,6 +4,13 @@ This api was made with the intention to parse a URL that is gotten when the user
 
     > At the moment it was only possible to test with RS recipts.
 
+## TODO
+
+- [ ] Create docker file
+- [ ] Find server to host container
+- [ ] Add Git Actions for CI/CD
+- [ ] Add Jest and tests
+
 ## How to run the project.
 
 You will need at least the version 12.x.x of Node.JS installed.
