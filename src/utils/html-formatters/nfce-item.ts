@@ -1,4 +1,4 @@
-import { NFCeItem } from "../../models/NFCe";
+import { NFCeItem } from "../../domain/models/NFCe";
 
 export function formatNFCeItems(document: any): NFCeItem[] {
   let index = 1;
