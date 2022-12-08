@@ -1,6 +1,5 @@
 import axios from "axios";
 import HTMLParser from 'node-html-parser'
-import { parseNFCeHTML } from "./useCase/nfceParser";
 import { saveObjToJsonFile } from "./utils";
 
 
@@ -30,10 +29,10 @@ async function main() {
     
   const nfceHtml = await downloadHTML(convertSefazURLFromQRCode(url_QRCode));
   const document = HTMLParser.parse(nfceHtml);
-  const nfParsed = parseNFCeHTML(document);
+  // const nfParsed = parseNfcHTML(document);
 
- console.log(nfParsed);
-  saveObjToJsonFile(nfParsed, "nfce.json")
+//  console.log(nfParsed);
+  // saveObjToJsonFile(nfParsed, "nfce.json")
 
 }
 setTimeout(() => main(), 200);
