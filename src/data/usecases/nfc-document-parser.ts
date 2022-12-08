@@ -4,11 +4,13 @@ import { formatNFCeBusinessInfo, formatNFCeFooter, formatNFCeHeaders, formatNFCe
 
 export class NFcDocumentParser implements NfcParser{
 	// constructor (formatHeader, formatInfo, formatFooter, formatItems){}
+	constructor (private readonly htmlParser: (data: string) => any){}
 	parse(document: any): NfcParser.Result{
-		const header = formatNFCeHeaders(document);
-  const businessInfo = formatNFCeBusinessInfo(document);
-  const items = formatNFCeItems(document);
-  const totals =   formatNFCeFooter(document)
+		const domHTML = this.htmlParser(document)
+		const header = formatNFCeHeaders(domHTML);
+  const businessInfo = formatNFCeBusinessInfo(domHTML);
+  const items = formatNFCeItems(domHTML);
+  const totals =   formatNFCeFooter(domHTML)
 
 		const nfceData = {
 				nfNumber: header.nfceNumber,
@@ -27,7 +29,7 @@ export class NFcDocumentParser implements NfcParser{
 				discount: totals.totalDiscount,
 				totalPaid: totals.totalPaid
 			};
-			
+
   return {nf: nfceData};
 	}
 

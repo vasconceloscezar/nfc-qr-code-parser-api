@@ -15,12 +15,12 @@ export class NfcParserController implements Controller{
 		try {
 			const { qrCodeURL } = request
 			const urlConverted = this.urlQRCodeConverter.convert(qrCodeURL)
-			const nfcDocument = this.htmlDownloader.download(urlConverted)
+			const nfcDocument = await this.htmlDownloader.download(urlConverted)
 			const nfc = this.nfcParser.parse(nfcDocument)
 
 			const result = { 
 				message: 'deu bom',
-				nf: nfc
+				nfc
 			}
 			return ok(result)
 		}catch(err: any){
