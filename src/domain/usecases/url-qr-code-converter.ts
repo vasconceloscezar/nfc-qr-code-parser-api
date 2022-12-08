@@ -1,3 +1,3 @@
 export interface UrlQRCodeConverter {
-	convert: (url: string) => string
+  convert: (url: string) => string
 }

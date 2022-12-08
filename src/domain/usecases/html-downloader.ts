@@ -1,9 +1,9 @@
 export interface HTMLDownloader {
-	download: (url: string) => Promise<HTMLDownloader.Result>
+  download: (url: string) => Promise<HTMLDownloader.Result>
 }
 
 export namespace HTMLDownloader {
-	export type Result = {
-		document: any
-	}
+  export type Result = {
+    document: any
+  }
 }

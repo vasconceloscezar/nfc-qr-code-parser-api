@@ -1,11 +1,11 @@
-import { NFCe } from "../models/NFCe";
-import { formatNFCeBusinessInfo, formatNFCeFooter, formatNFCeHeaders, formatNFCeItems } from "../../utils/html-formatters";
+import { NFCe } from '../models/NFCe'
+import { formatNFCeBusinessInfo, formatNFCeFooter, formatNFCeHeaders, formatNFCeItems } from '../../utils/html-formatters'
 
 export interface NfcParser {
-	parse: (document: any) => NfcParser.Result
+  parse: (document: any) => NfcParser.Result
 }
 export namespace NfcParser {
-	export type Result = {
-		nf: NFCe
-	}
+  export type Result = {
+    nf: NFCe
+  }
 }

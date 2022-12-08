@@ -1,35 +1,35 @@
 type BusinessInfo = {
-  idBusiness: string,
-  ieBusiness: string,
+  idBusiness: string
+  ieBusiness: string
   address: string
 }
 
-export function formatNFCeBusinessInfo(document: any): BusinessInfo {
-  const queriedBusinessInfo = document.querySelectorAll(".NFCCabecalho_SubTitulo1");
+export function formatNFCeBusinessInfo (document: any): BusinessInfo {
+  const queriedBusinessInfo = document.querySelectorAll('.NFCCabecalho_SubTitulo1')
   const businessInfo = {
     idBusiness: '',
     ieBusiness: '',
-    address: '',
-  };
+    address: ''
+  }
   queriedBusinessInfo.forEach((el: any, index: number) => {
-    let value = el.childNodes[0].text;
+    const value = el.childNodes[0].text
     switch (index) {
       case 0:
-        let values = value.split(":");
-        let idBusiness = values[1].split("\n").map((el: any) => el.trim())[1];
-        let ieBusiness = values[2].trim();
-        businessInfo["idBusiness"] = idBusiness;
-        businessInfo["ieBusiness"] = ieBusiness;
-        break;
+        const values = value.split(':')
+        const idBusiness = values[1].split('\n').map((el: any) => el.trim())[1]
+        const ieBusiness = values[2].trim()
+        businessInfo.idBusiness = idBusiness
+        businessInfo.ieBusiness = ieBusiness
+        break
       case 1:
-        businessInfo["address"] = value
-          .split("\n")
+        businessInfo.address = value
+          .split('\n')
           .map((el: any) => el.trim())
-          .join(" ");
-        break;
+          .join(' ')
+        break
       default:
-        break;
+        break
     }
-  });
-  return businessInfo;
+  })
+  return businessInfo
 }
