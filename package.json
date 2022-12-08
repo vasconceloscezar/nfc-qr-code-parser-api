@@ -12,7 +12,9 @@
     "parser",
     "url",
     "nfce",
-    "qr"
+    "qr",
+    "api",
+    "sefazRS"
   ],
   "author": "Cezar Vasconcelos",
   "license": "MIT",
