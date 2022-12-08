@@ -93,3 +93,17 @@ After it, you can run with:
 ```shell
   $ docker run -p 5000:8080 -d <username>/nfc-qr-code-parser-api
 ```
+
+To shut down the container we need to `kill` it.
+
+First get the container ID with
+
+```shell
+  $ docker ps
+```
+
+Then execute the kill command with the id
+
+```shell
+  $ docker kill  <container id>
+```
